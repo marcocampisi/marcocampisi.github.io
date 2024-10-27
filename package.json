@@ -1,7 +1,8 @@
 {
-  "name": "portfolio-vue",
+  "name": "marcocampisi.github.io",
   "version": "0.0.0",
   "private": true,
+  "homepage": "https://marcocampisi.github.io",
   "type": "module",
   "scripts": {
     "dev": "vite",
