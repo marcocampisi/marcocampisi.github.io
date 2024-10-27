@@ -8,12 +8,12 @@ import myPhoto from "../assets/me.png";
         <img
             :src="myPhoto"
             alt=''
-            class='rounded-md h-52 mx-auto my-10'
+            class='rounded-full h-52 mx-auto my-10'
         />
         <p class='text-lg px-6 text-justify'>
-            Appassionato di informatica e tecnologia in generale, mi piace scoprire nuovi modi di realizzare
-            le mie idee. Il mio settore principale è lo sviluppo web. Al di là del digitale, trovo ispirazione
-            nella musica e nel cinema. Se hai bisogno di contattarmi, trovi il mio LinkedIn qui sotto.
+            Ciao! Sono uno sviluppatore appassionato di tecnologia e sempre alla ricerca di nuovi modi per dar vita alle mie idee.
+            Tra una riga di codice e l’altra, trovo ispirazione nella musica e nel cinema, che mi aiutano a vedere ogni progetto da una prospettiva creativa.
+            Se ti va di connetterti o di fare due chiacchiere su LinkedIn, trovi il link qui sotto!
         </p>
     </div>
     <div class='w-full flex justify-center mb-10'>
