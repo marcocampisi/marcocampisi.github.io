@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="it">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Work+Sans:wght@400;500&display=swap" rel="stylesheet">
+		<link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+		%sveltekit.head%
+          
+
+		<style>
+			:root {
+				--bg-color: #FAF0E6;
+				--text-color: #333333;
+				--primary-accent: #B0E0E6;
+				--secondary-accent: #FFDAB9;
+				--card-bg: #FFFACD;
+				--border-color: #333333;
+				--shadow-color: #333333;
+
+				--font-heading: 'Poppins', sans-serif;
+				--font-body: 'Work Sans', sans-serif;
+
+				--border-width: 3px;
+				--shadow-offset: 5px;
+
+                color-scheme: light dark;
+			}
+
+			@media (prefers-color-scheme: dark) {
+				:root {
+					--bg-color: #1a1a1a;
+					--text-color: #e0e0e0;
+					--primary-accent: #6495ED;
+					--secondary-accent: #FFA07A;
+					--card-bg: #2c2c2c;
+					--border-color: #777777;
+					--shadow-color: #000000;
+				}
+
+                .tag {
+                    color: #1a1a1a;
+                }
+                .link-button {
+                     box-shadow: 3px 3px 0px var(--secondary-accent);
+                }
+                 .link-button:hover {
+                    background-color: var(--secondary-accent);
+		            color: #1a1a1a;
+                    box-shadow: 3px 3px 0px var(--border-color);
+                }
+			}
+
+
+			body {
+				margin: 0;
+				padding: 0;
+				font-family: var(--font-body);
+				background-color: var(--bg-color);
+				color: var(--text-color);
+				line-height: 1.6;
+                transition: background-color 0.3s ease, color 0.3s ease;
+			}
+
+			h1, h2, h3 {
+				font-family: var(--font-heading);
+				margin-bottom: 0.5em;
+			}
+
+			a {
+				color: var(--text-color);
+				font-weight: 500;
+                transition: color 0.3s ease;
+			}
+
+			a:hover {
+				text-decoration: underline;
+			}
+
+			section {
+				padding: 4rem 2rem;
+				max-width: 1000px;
+				margin: 0 auto;
+			}
+
+			@media (max-width: 768px) {
+				section {
+					padding: 2.5rem 1rem;
+				}
+			}
+
+			html {
+				scroll-behavior: smooth;
+				scroll-padding-top: var(--header-height, 70px);
+			}
+
+		</style>
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">%sveltekit.body%</div>
+	</body>
+</html>
