@@ -4,6 +4,8 @@
 	import TechStack from '$lib/components/TechStack.svelte';
 	import Projects from '$lib/components/Projects.svelte';
 	import type { Project, Technology } from '$lib/types/Project';
+	import Timeline from '$lib/components/Timeline.svelte';
+	import type { TimelineItem } from '$lib/components/Timeline.svelte';
 
 	const yourName = "Marco Campisi";
 	const yourTitle = "Full-Stack Developer";
@@ -30,7 +32,30 @@
 		{ name: 'MySQL', iconClass: 'mysql-original' },
 	];
 
-	// Progetti (invariati)
+	const myExperiences: TimelineItem[] = [
+		{
+			period: 'Feb 2024 - Presente',
+			title: 'Full-Stack Developer',
+			location: 'QCSNET S.r.l.',
+			description: 'Apprendistato professionale come sviluppatore full-stack. Pricipali tecnologie: C#, .NET, Vue.js, TypeScript.',
+			type: 'work'
+		},
+		{
+			period: 'Apr 2023 - Nov 2023',
+			title: 'Corso Full-Stack Web Developer',
+			location: 'Boolean',
+			description: 'Bootcamp intensivo di 6 mesi per sviluppatori web full-stack. Ho acquisito competenze in JavaScript, Vue.js, PHP, Laravel e MySQL.',
+			type: 'study'
+		},
+        {
+			period: 'Set 2015 - Giu 2020',
+			title: 'Liceo Classico',
+			location: 'I.I.S "M. Raeli" - Noto (SR)',
+			description: 'Diploma di maturità classica. Ho sviluppato una solida base culturale e capacità di analisi critica. Voto: 100/100.',
+			type: 'study'
+		}
+	];
+
 	const projects: Project[] = [
         {
 			id: 1,
@@ -66,6 +91,7 @@
 </div>
 <div id="bio"> <Bio content={bioContent} /> </div>
 <div id="tech"> <TechStack {technologies} /> </div>
+<Timeline items={myExperiences} title="Il Mio Percorso" />
 <div id="projects"> <Projects {projects} /> </div>
 
 <footer class="site-footer">

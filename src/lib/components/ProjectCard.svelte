@@ -34,7 +34,7 @@
 		flex-direction: column;
 		gap: 1rem;
 		box-shadow: var(--shadow-offset) var(--shadow-offset) 0px var(--shadow-color);
-        transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background-color 0.3s ease, border-color 0.3s ease; /* Aggiunte transizioni tema */
+        transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background-color 0.3s ease, border-color 0.3s ease;
 	}
 
     .card:hover {
