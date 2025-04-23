@@ -88,7 +88,7 @@
         padding-bottom: 1rem;
 		border-bottom: var(--border-width) solid transparent;
 		background-color: transparent;
-		position: relative;
+		position: sticky;
 		top: 0;
 		left: 0;
 		width: 100%;
@@ -97,7 +97,6 @@
 	}
 
 	.site-header.sticky {
-		position: sticky;
 		background-color: var(--bg-color);
 		border-bottom-color: var(--border-color);
 		box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
