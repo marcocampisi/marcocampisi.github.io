@@ -46,6 +46,7 @@
 		{ href: '#hero', text: 'Home' },
 		{ href: '#bio', text: 'Chi Sono' },
 		{ href: '#tech', text: 'Tecnologie' },
+        { href: '#story', text: 'Percorso'},
 		{ href: '#projects', text: 'Progetti' },
 		
 	];

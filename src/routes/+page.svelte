@@ -91,7 +91,7 @@
 </div>
 <div id="bio"> <Bio content={bioContent} /> </div>
 <div id="tech"> <TechStack {technologies} /> </div>
-<Timeline items={myExperiences} title="Il Mio Percorso" />
+<div id="story"> <Timeline items={myExperiences} title="Il Mio Percorso" /> </div>
 <div id="projects"> <Projects {projects} /> </div>
 
 <footer class="site-footer">
