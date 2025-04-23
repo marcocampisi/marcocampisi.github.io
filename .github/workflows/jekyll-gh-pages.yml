@@ -1,0 +1,86 @@
+# Nome del workflow
+name: Build and Deploy SvelteKit site to GitHub Pages (using Bun)
+
+on:
+  # Esegui su push verso il branch specificato
+  push:
+    branches: ["main"] # O il tuo branch di produzione
+
+  # Permette di eseguire questo workflow manually dalla tab Actions
+  workflow_dispatch:
+
+# Imposta i permessi GITHUB_TOKEN per permettere il deploy su GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Permetti un solo deploy concorrente
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout # Scarica il codice
+        uses: actions/checkout@v4
+
+      # --- Modifica: Usa setup-bun invece di setup-node ---
+      - name: Setup Bun # Imposta l'ambiente Bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          # Puoi specificare una versione o usare 'latest'
+          bun-version: latest
+          # setup-bun gestisce la cache internamente
+
+      # --- Modifica: Usa bun install ---
+      - name: Install dependencies # Installa le dipendenze del progetto con Bun
+        # Usa --frozen-lockfile per garantire l'uso del lockfile, simile a 'npm ci'
+        run: bun install --frozen-lockfile
+
+      - name: Detect Base Path # Determina il base path corretto (Logica invariata)
+        id: base_path
+        run: |
+          repo_name=${{ github.event.repository.name }}
+          owner_name=${{ github.repository_owner }}
+          expected_repo="${owner_name}.github.io"
+          # Controlla se il repo è la pagina utente/organizzazione principale
+          if [[ "$repo_name" == "$expected_repo" ]]; then
+            echo "base_path=" >> $GITHUB_OUTPUT
+            echo "Repository is user/org page. Using empty base path."
+          else
+          # Altrimenti, usa il nome del repository come base path
+            echo "base_path=/${repo_name}" >> $GITHUB_OUTPUT
+            echo "Repository is project page. Using base path '/${repo_name}'."
+          fi
+
+      # --- Modifica: Usa bun run build ---
+      - name: Build with SvelteKit # Esegue il build usando bun
+        # Passa la variabile d'ambiente BASE_PATH al comando di build
+        run: bun run build
+        env:
+          # Imposta il base path rilevato per SvelteKit adapter/config
+          BASE_PATH: ${{ steps.base_path.outputs.base_path }}
+
+      - name: Setup Pages # Configura GitHub Pages (Invariato)
+        uses: actions/configure-pages@v5
+        # Non serve più passare base path qui se gestito da SvelteKit
+
+      - name: Upload artifact # Carica l'artefatto (cartella 'build') (Invariato)
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Path alla directory generata da adapter-static (solitamente 'build')
+          path: './build'
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build # Dipende dal successo del job 'build' (Invariato)
+    steps:
+      - name: Deploy to GitHub Pages # Esegue il deploy (Invariato)
+        id: deployment
+        uses: actions/deploy-pages@v4
