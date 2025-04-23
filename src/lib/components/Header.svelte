@@ -97,7 +97,7 @@
 	}
 
 	.site-header.sticky {
-		position: fixed;
+		position: sticky;
 		background-color: var(--bg-color);
 		border-bottom-color: var(--border-color);
 		box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
