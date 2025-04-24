@@ -37,7 +37,7 @@
 			period: 'Feb 2024 - Presente',
 			title: 'Full-Stack Developer',
 			location: 'QCSNET S.r.l.',
-			description: 'Apprendistato professionale come sviluppatore full-stack. Pricipali tecnologie: C#, .NET, Vue.js, TypeScript.',
+			description: 'Apprendistato professionale come sviluppatore full-stack. Principali tecnologie: C#, .NET, Vue.js, TypeScript.',
 			type: 'work'
 		},
 		{
