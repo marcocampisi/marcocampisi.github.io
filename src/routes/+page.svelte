@@ -7,9 +7,23 @@
 	import Timeline from '$lib/components/Timeline.svelte';
 	import type { TimelineItem } from '$lib/components/Timeline.svelte';
 
+	const birthDate = new Date(2002, 2, 18);
+
+	$: age = (() => {
+		const today = new Date();
+		let calculatedAge = today.getFullYear() - birthDate.getFullYear();
+		const monthDifference = today.getMonth() - birthDate.getMonth();
+		const dayDifference = today.getDate() - birthDate.getDate();
+
+		if (monthDifference < 0 || (monthDifference === 0 && dayDifference < 0)) {
+		calculatedAge--;
+		}
+		return calculatedAge;
+	})();
+
 	const yourName = "Marco Campisi";
 	const yourTitle = "Full-Stack Developer";
-	const bioContent = `Sviluppatore per professione, curioso per natura. Mi diverte capire come funzionano le cose e usare la tecnologia per costruire qualcosa di nuovo. Nel tempo libero, mi perdo volentieri nella musica e nel cinema, che trovo siano ottimi modi per allenare la creatività. Se vuoi metterti in contatto per parlare di tecnologia, progetti o scambiare opinioni, aggiungimi su LinkedIn!`;
+	$: bioContent = `Sviluppatore per professione, siciliano e curioso per natura. A ${age} anni, mi diverte capire come funzionano le cose e usare la tecnologia per costruire qualcosa di nuovo. Nel tempo libero, mi perdo volentieri nella musica e nel cinema, che trovo siano ottimi modi per allenare la creatività. Se vuoi metterti in contatto per parlare di tecnologia, progetti o scambiare opinioni, aggiungimi su LinkedIn!`;
 
     const githubUsername = "marcocampisi";
     const linkedinProfileName = "marcocampisi02";
