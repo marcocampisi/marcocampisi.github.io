@@ -132,8 +132,6 @@
         border-radius: 100%;
 	}
 
-	.main-nav {
-    }
 	.nav-links {
 		list-style: none;
 		padding: 0;

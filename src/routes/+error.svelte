@@ -65,7 +65,7 @@
         margin-left: auto;
         margin-right: auto;
 	}
-    .description code {
+    :global(.description code) {
         background-color: rgba(128,128,128, 0.15);
         padding: 0.1em 0.4em;
         border-radius: 4px;

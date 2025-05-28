@@ -34,6 +34,8 @@
 	<div class="bio-container">
 		<div
 			class="profile-picture-container"
+			role="button"
+			tabindex="0"
 			on:mouseenter={handleMouseEnter}
 			on:mouseleave={handleMouseLeave}
 			on:mousemove={handleMouseMove}
@@ -83,7 +85,7 @@
 		display: inline-block;
 		padding-bottom: 0.3rem;
 	}
-	.text-content {}
+	
     @media (max-width: 768px) {}
 	:global(.bio .text-content p) { margin-bottom: 1em; }
 	:global(.bio .text-content p:last-child) { margin-bottom: 0; }
