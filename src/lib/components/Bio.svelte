@@ -17,17 +17,6 @@
 		isHovering = false;
 	}
 
-	// function handleMouseMove(event: MouseEvent) {
-	// 	if (!isHovering) return;
-
-	// 	const target = event.currentTarget as HTMLElement;
-    //     if (!target) return;
-
-	// 	const rect = target.getBoundingClientRect();
-	// 	mouseX = event.clientX - rect.left;
-	// 	mouseY = event.clientY - rect.top;
-	// }
-
 </script>
 
 <section class="bio">
@@ -36,9 +25,6 @@
 			class="profile-picture-container"
 			role="button"
 			tabindex="0"
-			on:mouseenter={handleMouseEnter}
-			on:mouseleave={handleMouseLeave}
-			on:mousemove={handleMouseMove}
 			style="--mouse-x:{mouseX}px; --mouse-y:{mouseY}px; --reveal-radius:{isHovering ? revealRadius : 0}px;"
 		>
 			<!-- <img
@@ -109,20 +95,6 @@
         height: 100%;
         object-fit: cover;
     }
-
-	.base-image {
-		position: relative;
-		z-index: 1;
-	}
-
-	/* .reveal-image {
-		position: absolute;
-		top: 0;
-		left: 0;
-		z-index: 2;
-        clip-path: circle(var(--reveal-radius) at var(--mouse-x) var(--mouse-y));
-        transition: clip-path 0.1s ease-out;
-	} */
 
     @media (max-width: 768px) {
 		.bio-container {
