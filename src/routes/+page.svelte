@@ -23,7 +23,7 @@
 
 	const yourName = "Marco Campisi";
 	const yourTitle = "Full-Stack Developer";
-	$: bioContent = `Sviluppatore per professione, siciliano e curioso per natura. A ${age} anni, mi diverte capire come funzionano le cose e usare la tecnologia per costruire qualcosa di nuovo. Nel tempo libero, mi perdo volentieri nella musica e nel cinema, che trovo siano ottimi modi per allenare la creatività. Se vuoi metterti in contatto per parlare di tecnologia, progetti o scambiare opinioni, aggiungimi su LinkedIn!`;
+	$: bioContent = `Sviluppatore per professione, siciliano e curioso per natura. A ${age} anni, mi diverte capire come funzionano le cose e usare la tecnologia per costruire qualcosa di nuovo. Nel tempo libero, mi perdo volentieri nella musica, nella fotografia e nel cinema, che trovo siano ottimi modi per allenare la creatività. Se vuoi metterti in contatto per parlare di tecnologia, progetti o scambiare opinioni, aggiungimi su LinkedIn.`;
 
     const githubUsername = "marcocampisi";
     const linkedinProfileName = "marcocampisi02";
@@ -48,7 +48,7 @@
 
 	const myExperiences: TimelineItem[] = [
 		{
-			period: 'Feb 2024 - Presente',
+			period: 'Feb 2024 - Ott 2025',
 			title: 'Full-Stack Developer',
 			location: 'QCSNET S.r.l.',
 			description: 'Apprendistato professionale come sviluppatore full-stack. Principali tecnologie: C#, .NET, Vue.js, TypeScript.',
