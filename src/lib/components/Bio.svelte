@@ -82,7 +82,7 @@
 		position: relative;
 		width: 200px;
 		height: 200px;
-		cursor: pointer;
+		/*cursor: pointer;*/
 		overflow: hidden;
         border: var(--border-width) solid var(--border-color);
 		box-shadow: var(--shadow-offset) var(--shadow-offset) 0px var(--shadow-color);
